@@ -1,4 +1,6 @@
+"use client";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 type DividerProps = {
   showNumber?: boolean;
@@ -15,7 +17,21 @@ export const Divider = ({
   orientation = "horizontal",
   className,
 }: DividerProps) => {
-  const isHorizontal = orientation === "horizontal";
+  const [isXl, setIsXl] = useState(false);
+
+  useEffect(() => {
+    const checkXl = () => {
+      setIsXl(window.innerWidth >= 1280);
+    };
+
+    checkXl();
+    window.addEventListener("resize", checkXl);
+
+    return () => window.removeEventListener("resize", checkXl);
+  }, []);
+
+  // Force vertical on xl, otherwise use the passed orientation
+  const isHorizontal = isXl ? false : orientation === "horizontal";
 
   return (
     <div
@@ -36,16 +52,12 @@ export const Divider = ({
         {showNumber && (
           <>
             <div
-              className={cn(
-                isHorizontal ? "w-1.5 h-1.5" : "w-1.5 h-1.5",
-                "bg-clementine shrink-0",
-              )}
+              className="
+                w-1.5 h-1.5 bg-clementine shrink-0"
             />
             <span
-              className={cn(
-                "text-earth font-mono font-light text-[11px] leading-[120%] shrink-0",
-                isHorizontal ? "inline-block" : "rotate-90",
-              )}
+              className="
+                text-earth font-mono font-light text-[11px] leading-[120%] shrink-0 inline-block"
             >
               0{number}
             </span>
@@ -54,7 +66,7 @@ export const Divider = ({
 
         {/* The dotted/dashed line */}
         <div
-          className={cn(isHorizontal ? "flex-1 h-1.5" : "flex-1 w-1.5")}
+          className={isHorizontal ? "flex-1 h-1.5" : "flex-1 w-1.5"}
           style={
             isHorizontal
               ? {
