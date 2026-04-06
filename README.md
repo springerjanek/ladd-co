@@ -1,4 +1,4 @@
-images would need a change on desktop for sure.
+images would need a change on desktop for sure. + I'm aware of navbar logo not being correct (in the lines etc.), I can use the 1:1 approach from figma, just started with that.
 
 Desktop is only partly done (first 3 sections), I belive this outcome will show enough of my craft and approach.
 Mobile is done.
