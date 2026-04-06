@@ -1,3 +1,11 @@
+images would need a change on desktop for sure.
+
+Desktop is only partly done, I belive this outcome will show enough of my craft and approach.
+Mobile is done.
+
+pages: `/ (home)`, `/contact`, `/legal`
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
