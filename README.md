@@ -1,6 +1,6 @@
 images would need a change on desktop for sure.
 
-Desktop is only partly done, I belive this outcome will show enough of my craft and approach.
+Desktop is only partly done (first 3 sections), I belive this outcome will show enough of my craft and approach.
 Mobile is done.
 
 pages: `/ (home)`, `/contact`, `/legal`
