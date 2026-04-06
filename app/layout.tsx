@@ -48,10 +48,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`...`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ppEiko.variable} border-coffee/6 border-l border-r mx-4 bg-paper min-h-full flex flex-col text-coffee`}
+        className={`${geistSans.variable} ${geistMono.variable} ${ppEiko.variable} bg-paper min-h-full flex flex-col text-coffee`}
       >
-        <Navbar />
-        {children}
+        <div className="relative">
+          <div className="fixed left-4 xl:left-[50px] 2xl:left-[200px] top-0 bottom-0 w-px bg-coffee/6" />
+
+          <div className="hidden xl:block fixed left-[calc(50px+60px)] 2xl:left-[calc(200px+60px)] top-0 bottom-0 w-px bg-coffee/6" />
+
+          <div className="fixed right-4 xl:right-[50px] 2xl:right-[200px] xl:top-18.5 top-0 bottom-0 w-px bg-coffee/6" />
+
+          <div className="mx-4 xl:mx-[50px] 2xl:mx-[200px]">
+            <Navbar />
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
